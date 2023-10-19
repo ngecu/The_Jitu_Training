@@ -1,0 +1,182 @@
+:root{
+    
+    --Blue: hsl(246, 80%, 60%);
+    --Light-red: hsl(15, 100%, 70%);
+    --Soft-blue : hsl(195, 74%, 62%);
+    --Light-red : hsl(348, 100%, 68%);
+    --Lime-green: hsl(145, 58%, 55%);
+    --Violet: hsl(264, 64%, 52%);
+    --Soft-orange: hsl(43, 84%, 65%);
+    --Very-dark-blue: hsl(226, 43%, 10%);
+    --Dark-blue: hsl(235, 46%, 20%);
+    --Desaturated-blue: hsl(235, 45%, 61%);
+    --Pale-Blue: hsl(236, 100%, 87%);
+}
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+    font-family: 'Outfit', 'Rubik','Poppins',sans-serif;
+ 
+}
+
+body{
+    background-color:var(--Very-dark-blue);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height: 100vh;
+ 
+}
+
+.main{
+    width:80vw;
+    height:80vh;
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows:repeat(2,1fr);
+    grid-template-areas:
+    'jeremy work  play study'
+    'jeremy exercise social selfcare'
+     ;
+    gap:20px;
+}
+
+#jeremy{
+    grid-area:jeremy;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color:white;
+    border-radius:20px;
+    background-color: var(--Dark-blue);
+    /* margin:1rem; */
+}
+
+#card-bar-work{
+    background-color:var(--Soft-orange)
+}
+
+.content{
+    border-radius:20px;
+    color:white;
+    background-color:var(--Dark-blue) ;
+    height:75%;
+
+    
+}
+.card-desc{
+    margin:1rem;
+    padding:.3rem;
+}
+.time{
+    font-size: 4rem;
+    margin:1rem;
+}
+
+.card-title-ellipsis{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    gap:150px;
+    align-items:center;
+    font-size:18px;
+    /* border:2px solid red; */
+    width:100%;
+    height:3rem;
+}
+
+#name-photo-tag{
+    background-color: var(--Violet);
+    border-radius:9px;
+    height:65%;
+    padding:1rem;
+    width:100%;
+}
+#name-photo-tag>p{
+    padding-top:1rem;
+}
+
+#jeremy-photo{
+    width: 100px;
+    height:100px;
+}
+#robson-name{
+    font-weight:400;
+    font-size:2.5rem;
+}
+
+#duration{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin:1rem;
+    padding: 1rem;
+    gap:1.2rem;
+    font-size: 1.2rem;
+}
+
+#work{
+    grid-area:work;
+    border-radius:20px;
+   
+}
+#work,#play,#social,#selfcare,#study,#selfcare,#exercise{
+    background-color: var(--Dark-blue);
+    border-radius:20px;
+}
+
+#play{
+    grid-area:play;
+
+}
+
+.card-bar{
+    background-color: var(--Light-red);
+    width:100%;
+    height:75px;
+    border-radius:10px;
+    
+}
+
+
+
+svg{
+    float:right;
+    z-index:-1;
+
+}
+
+#study{
+    grid-area:study;
+}
+#exercise{
+    grid-area:exercise;
+}
+
+#social{
+    grid-area:social;
+}
+
+#selfcare{
+    grid-area:selfcare;
+}
+
+@media screen and (max-width:768px){
+    .main{
+        width:80vw;
+        height:80vh;
+        display:grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows:repeat(6,1fr);
+        grid-template-areas:
+        'jeremy ''work ' 'play' 'study' 'exercise' 'social' 'selfcare'
+    
+         ;
+        gap:20px;
+    }
+}

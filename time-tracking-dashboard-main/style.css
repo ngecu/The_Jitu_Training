@@ -1,0 +1,130 @@
+body{
+    background-color: hsl(226, 43%, 10%);
+    color: white;
+    margin: 10%;
+    height: 100vh;
+    overflow: hidden;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.main{
+    display: grid;
+    grid-template-columns: 25% 75%;
+    gap: 10px;
+}
+
+.card {
+    border-radius: 8px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    display: grid;
+    grid-template-rows: 20% 80%;
+
+  }
+  .card-body{
+    padding: 20px; 
+    border-radius: 20px;
+    background-color:  hsl(235, 46%, 20%);
+    position: relative;
+    top: -10%
+
+  }
+  .card-body:hover{
+    cursor: pointer;
+    background-color:  hsl(235, 45%, 61%)
+  }
+.jeremy-card{
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: 70% 30%; 
+}
+.jeremy-card .purple-b {
+    padding: 7%;
+
+}
+.report-for h1{
+    font-size: 60px;
+font-weight: normal;
+margin: 0;
+}
+.last-week span{
+color: #bfb1b1;
+}
+.profile-pic-container{
+    border-radius: 50%;
+    border: solid white;
+    width: 30%;
+}
+.profile-pic-container img{
+    width: 100%;
+}
+.purple-b{
+    background-color: hsl(264, 64%, 52%);
+    border-radius: 10px;
+}
+
+.outer-right-container{
+    display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+.times{
+    padding: 5%;
+    background-color:  hsl(235, 46%, 20%);
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    height: 110px;
+}
+.card-title{
+    font-size: 18px;
+    font-weight: 200;
+}
+.card-hours{
+    font-weight: 400;
+font-size: 18px;
+}
+.card-title-container{
+    display: flex;
+    justify-content: space-between;
+}
+.work-card .card-shade{
+    background-color:   hsl(15, 100%, 70%);
+}
+.play-card .card-shade{
+    background-color: hsl(195, 74%, 62%);
+}
+.study-card .card-shade{
+    background-color: hsl(348, 100%, 68%);
+}
+.excercise-card .card-shade{
+    background-color: hsl(145, 58%, 55%);
+}
+
+.social-card .card-shade{
+    background-color: hsl(264, 64%, 52%);
+}
+.self-card-card .card-shade{
+    background-color: hsl(43, 84%, 65%);
+}
+
+.card-shade{
+    display: grid;
+    border-radius: 10px;
+    grid-template-columns:  70% 20%;
+
+}
+  
+  .card-shade  div {
+    margin-right: auto;
+  }
+
+  .card-shade div img{
+    width: 50px;
+  }
+
+
+.card-shade img{
+    display: flex;
+    justify-self: end;
+}

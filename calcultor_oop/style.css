@@ -1,0 +1,95 @@
+body {
+  background: linear-gradient(to right, #054688, #D31589);
+  height: 100vh;
+  color: white;
+  overflow: hidden;
+}
+body .main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .main .card {
+  width: 25%;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 20px;
+  color: black;
+  position: relative;
+  top: 20rem;
+}
+body .main .card h1 {
+  text-align: center;
+}
+body .main form {
+  display: flex;
+  border-radius: 29px;
+  height: 66px;
+}
+body .main form .input_containers {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+body .main form .input_containers .input_container input {
+  background-color: #565B5C;
+  color: white;
+  padding: 20px;
+  border-radius: 20px;
+}
+body .main .tasks {
+  margin: 6%;
+}
+body .main .task {
+  display: flex;
+  justify-content: space-between;
+  margin: 4%;
+  align-items: center;
+}
+body .main .task .edit_delete_container {
+  display: flex;
+}
+body .main .task .actual_task {
+  display: flex;
+  align-items: center;
+}
+body .main .task ion-icon {
+  color: red;
+  font-size: 28px;
+}
+body .main .task .cancel_container {
+  cursor: pointer;
+}
+body .main .task .cancel_container ion-icon {
+  color: red;
+  font-size: 28px;
+}
+body .main .complete {
+  text-decoration: line-through;
+}
+body .main .complete ion-icon {
+  color: green;
+}
+body .main .edit_container ion-icon {
+  color: rgb(137, 131, 131);
+}
+body .main .operational_buttons_container {
+  display: flex;
+  justify-content: space-around;
+}
+body .main .operational_buttons_container .operation_button {
+  padding: 20px;
+  color: white;
+  border-radius: 50px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}

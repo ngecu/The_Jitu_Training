@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&family=Montserrat:wght@100&family=Poppins:wght@300&display=swap");
+body {
+  font-family: "Manrope", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
+  background-color: #F0F0F0;
+  display: flex;
+  overflow: hidden;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+hr {
+  margin-right: 90px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 20px;
+  border-bottom-right-radius: 205px;
+  padding: 2%;
+}
+
+#ageForm {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: #717171;
+}
+
+input[type=text], input[type=number] {
+  padding: 20px;
+  margin-bottom: 10px;
+  border: solid #DDDDDD;
+  border-radius: 10px;
+}
+
+span {
+  color: #864DFE;
+}
+
+button {
+  padding: 40px;
+  background-color: #864DFE;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  position: relative;
+  top: 67px;
+}
+
+button:hover, button:focus {
+  background-color: #0056b3;
+}
+
+#result {
+  margin-top: 20px;
+  font-weight: bold;
+}
+#result h1 {
+  font-size: 32px;
+}
+
+.countup {
+  transition: all 1s;
+}
