@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&family=Montserrat:wght@100&family=Poppins:wght@300&family=Roboto:wght@400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
+  background-color: hsl(234, 29%, 20%);
+  height: 100vh;
+  overflow: hidden;
+}
+body .main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+body .main .d-flex {
+  display: flex;
+}
+body .main .card {
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 20px;
+  padding: 2%;
+}
+body .main .form-container {
+  padding: 2% 0;
+}
+body .main .form-details-container {
+  padding: 10% 2%;
+}
+body .main form {
+  display: flex;
+  flex-direction: column;
+}
+body .main form .label-error-container {
+  display: flex;
+  margin-bottom: 2%;
+}
+body .main form .label-error-container .email-label {
+  width: 50%;
+}
+body .main form .label-error-container .error-container {
+  width: 50%;
+}
+body .main form .label-error-container .error-container .error {
+  float: right;
+  color: hsl(4, 100%, 67%);
+  font-weight: bold;
+}
+body .main form label {
+  font-weight: bold;
+  margin: 2% 0;
+}
+body .main form input {
+  padding: 5%;
+  border-radius: 5px;
+  border: 1px solid #D9D9D9;
+}
+body .main form button {
+  margin: 20px 0;
+  padding: 4%;
+  border-radius: 5px;
+  background-color: hsl(235, 18%, 26%);
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+body .main form button:hover {
+  background-color: hsl(4, 100%, 67%);
+}
+body .main h1 {
+  margin: 20px 0;
+  font-size: 55px;
+}
+body .main li {
+  list-style: none;
+  margin: 2% 0;
+}
+body .main li img {
+  margin-right: 2%;
+}
+body .main li img {
+  width: 20px;
+}
+
+.response_message {
+  display: none;
+  position: absolute;
+  top: 35%;
+  background-color: white;
+  padding: 2%;
+  border-radius: 10px;
+  text-align: center;
+  left: 40%;
+  max-width: 376px;
+  transition: opacity 0.5s;
+}
+.response_message button {
+  margin: 20px 0;
+  padding: 4%;
+  border-radius: 5px;
+  background-color: hsl(235, 18%, 26%);
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+.response_message button:hover {
+  background-color: hsl(4, 100%, 67%);
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 25px;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */
