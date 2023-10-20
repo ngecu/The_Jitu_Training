@@ -19,6 +19,9 @@ body .main {
   align-items: center;
   height: 100%;
 }
+body .main .container {
+  transition: opacity 1s, display 1s;
+}
 body .main .d-flex {
   display: flex;
 }
@@ -95,10 +98,10 @@ body .main li img {
   background-color: white;
   padding: 2%;
   border-radius: 10px;
-  text-align: center;
+  text-align: left;
   left: 40%;
   max-width: 376px;
-  transition: opacity 0.5s;
+  transition: opacity 1s, display 1s;
 }
 .response_message button {
   margin: 20px 0;
@@ -107,6 +110,7 @@ body .main li img {
   background-color: hsl(235, 18%, 26%);
   font-weight: bold;
   color: white;
+  width: 100%;
   cursor: pointer;
 }
 .response_message button:hover {
@@ -133,4 +137,50 @@ body .main li img {
   right: 10px;
   font-size: 25px;
   cursor: pointer;
+}
+
+.visible {
+  display: block;
+  opacity: 1;
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    background-color: white;
+  }
+  body .main {
+    justify-content: start;
+    align-items: flex-start;
+  }
+  body .main .d-flex {
+    flex-direction: column-reverse;
+  }
+  body .main .d-flex .image-container picture img {
+    width: 100%;
+  }
+  body .response_message {
+    top: 10%;
+    padding: 2%;
+    border-radius: 10px;
+    text-align: left;
+    left: 0%;
+    transition: opacity 1s, display 1s;
+    height: 90vh;
+  }
+  body .response_message h1 {
+    font-size: 38px;
+    margin: 17px 0;
+  }
+  body .response_message p {
+    font-size: larger;
+  }
+  body .response_message button {
+    position: relative;
+    top: 20%;
+  }
 }/*# sourceMappingURL=style.css.map */

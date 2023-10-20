@@ -16,11 +16,18 @@ form.addEventListener('submit',(e)=>{
     
 let input_value:string = email_input.value
 
-    if(input_value.includes("@") && input_value.includes(".")){
+    if(input_value.includes("@") && input_value.includes(".") && (input_value.trim()).length != 0){
         modal.style.display = "block";
         message.innerHTML = `A confirmation email has been sent to <b>${input_value} </b> 
         Please open it and click the button inside to confirm your subscription.`;
-        container.style.display ="none";
+
+
+        container.classList.remove('visible');
+        container.classList.add('hidden');
+
+        modal.classList.remove('hidden');
+        modal.classList.add('visible');
+
         console.log("success")
     }
     else{
@@ -38,6 +45,9 @@ dismiss_btn.addEventListener("click",()=>{
 
     let container_same = document.querySelector('.container') as HTMLInputElement
 
-    modal.style.display = "none";
-    container_same.style.display ="block";
+    modal.classList.remove('visible');
+    modal.classList.add('hidden');
+
+    container_same.classList.remove('hidden');
+    container_same.classList.add('visible');
 })

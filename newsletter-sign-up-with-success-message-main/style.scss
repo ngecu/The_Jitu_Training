@@ -25,6 +25,10 @@ body{
         align-items: center;
     height: 100%;
 
+    .container{
+        transition: opacity 1s, display 1s;
+
+    }
     
     .d-flex{
         display: flex;
@@ -109,11 +113,11 @@ body{
     background-color: white;
     padding: 2%;
     border-radius: 10px;
-    text-align: center;
+    text-align: left;
     left: 40%;
     max-width: 376px;
-    transition: opacity 0.5s; 
-
+    // transition: opacity 0.5s; 
+    transition: opacity 1s, display 1s;
     button{
         margin: 20px 0;
         padding: 4%;
@@ -121,6 +125,7 @@ body{
         background-color: hsl(235, 18%, 26%);
         font-weight: bold;
         color: white;
+        width: 100%;
         cursor: pointer;
         &:hover{
             background-color: hsl(4, 100%, 67%);
@@ -152,3 +157,60 @@ body{
     font-size: 25px;
     cursor: pointer;
 }
+
+.visible {
+    display: block;
+    opacity: 1;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+}
+@media screen and (max-width:768px) {
+    body{
+        background-color: white;
+
+        .main{
+            justify-content: start;
+            align-items: flex-start;
+
+            .d-flex{
+                flex-direction: column-reverse;
+
+                .image-container{
+                    picture{
+                        img{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+        }
+
+
+        .response_message{
+            top: 10%;
+            padding: 2%;
+            border-radius: 10px;
+            text-align: left;
+            left: 0%;
+            transition: opacity 1s, display 1s;
+            height: 90vh;
+
+            h1{
+                font-size: 38px;
+                margin: 17px 0;
+            }
+            p{
+                font-size: larger;
+            }
+            button{
+                position: relative;
+                top: 20%;
+            }
+        }
+    }
+}
+
