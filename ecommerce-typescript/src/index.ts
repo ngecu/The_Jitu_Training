@@ -133,11 +133,4 @@ const getCategories = async ()=>{
 
 getCategories()
 
-const add_to_cart_btn1 = document.querySelector('.add_to_cart') as HTMLButtonElement;
-if(add_to_cart_btn1){
-  console.log("is rthre");
 
-    add_to_cart_btn1.addEventListener("click",()=>{
-        console.log("btn clicked")
-    })
-}

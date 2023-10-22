@@ -1,3 +1,4 @@
+@import "https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap";
 * {
   padding: 0;
   margin: 0;
@@ -12,6 +13,10 @@ body {
   color: #55595c;
   text-align: left;
   background-color: #fff;
+}
+
+.side-bar-toggle {
+  display: none;
 }
 
 hr {
@@ -335,8 +340,22 @@ footer {
   .discount-badge {
     display: none;
   }
-  nav .container {
-    margin: 0 2%;
+  .container {
+    margin: 0 5%;
+  }
+  .container .category_card, .container .product-card {
+    width: 100%;
+  }
+  nav .side-bar-toggle {
+    display: block;
+    padding: 2%;
+  }
+  nav .side-bar-toggle button {
+    background-color: transparent;
+    outline: solid 1px;
+    border: solid 1px;
+    cursor: pointer;
+    padding: 5%;
   }
 }
 .product-title a {
@@ -344,5 +363,32 @@ footer {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 100%; /* Set the maximum width you prefer */
+  max-width: 100%;
+}
+
+.toast-container {
+  position: fixed;
+  right: 20px;
+  background-color: green;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  animation: slide-in 0.5s ease-in-out;
+}
+
+.toast-message {
+  flex: 1;
+  padding: 10px;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }/*# sourceMappingURL=style.css.map */

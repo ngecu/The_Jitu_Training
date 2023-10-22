@@ -28,6 +28,22 @@ interface Product {
     title:string
 }
 
+const hideToast = ()=> {
+    const toastContainer = document.querySelector('.toast-container') as HTMLDivElement;
+    toastContainer.style.transform = 'translateX(100%)';
+}
+
+
+const showToast = (message:string) => {
+    const toastContainer = document.querySelector('.toast-container') as HTMLDivElement;
+
+    const toastMessage = toastContainer.querySelector('.toast-message') as HTMLDivElement ;
+    toastMessage.innerHTML = message;
+
+    toastContainer.style.transform = 'translateX(0)';
+    setTimeout(hideToast, 5000); 
+}
+
 
 const add_to_cart = async (product_id: number) => {
     console.log(product_id);
@@ -48,6 +64,7 @@ const add_to_cart = async (product_id: number) => {
             localStorage.setItem("cartItems", JSON.stringify(current_cart));
 
             console.log("Updated cart items:", current_cart);
+            showToast("successfully added")
         }
 
         const wrapper = document.querySelector('.basket-icon-wrapper');
@@ -72,6 +89,7 @@ const remove_from_cart = (product_id:number,index:number) =>{
     console.log(current_cart.length);
     
     localStorage.setItem("cartItems", JSON.stringify(current_cart));
+    showToast("successfully removed")
     
     const wrapper = document.querySelector('.basket-icon-wrapper');
     const cartItemCount = current_cart.length;
