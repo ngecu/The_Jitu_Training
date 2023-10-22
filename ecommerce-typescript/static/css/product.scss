@@ -74,13 +74,14 @@ select {
 }
 
 .add_to_cart {
-  
+    background-color: #4BBF73;
     color: #fff;
     border: none;
-    border-radius: 5px;
-  
+    // border-radius: 5px;
+    padding: 10px 20px;
     cursor: pointer;
     font-weight: bold;
+    transition: background-color 0.2s;
     width: 100%;
 }
 

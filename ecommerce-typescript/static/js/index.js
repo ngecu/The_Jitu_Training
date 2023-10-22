@@ -9,7 +9,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 const CATEGORIES_API_URI = "https://fakestoreapi.com/products/categories";
-console.log("X");
 const createCategoryCard = (category) => {
     const category_card = document.createElement('div');
     category_card.className = "category_card";
@@ -70,18 +69,12 @@ const createCategoryProductCards = (category) => __awaiter(void 0, void 0, void 
          </div>
  
          <div class="add-to-cart-btn-container">
-             <button class="add_to_cart">ADD TO CART</button>
+         <button class="add_to_cart" onclick="add_to_cart(${el.id})">ADD TO CART</button>
          </div>
      </div>
  </div>`;
             console.log(category);
             let product_container;
-            //  if(category == "women's clothing"){  
-            //    product_container = document.querySelector(`.women's`);
-            //  }
-            //  if(category == "men's clothing"){
-            //   product_container = document.querySelector(".men's");
-            //  }
             product_container = document.querySelector(`.${category.substring(0, 1)}_product_container`);
             if (product_container) {
                 product_container.innerHTML += card;

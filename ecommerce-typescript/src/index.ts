@@ -1,9 +1,6 @@
 const CATEGORIES_API_URI:string = "https://fakestoreapi.com/products/categories"
 
 
-
-console.log("X");
-
 const createCategoryCard = (category:string)=>{
 
 const category_card = document.createElement('div');
@@ -74,21 +71,13 @@ const createCategoryProductCards = async (category:string)=>{
          </div>
  
          <div class="add-to-cart-btn-container">
-             <button class="add_to_cart">ADD TO CART</button>
+         <button class="add_to_cart" onclick="add_to_cart(${el.id})">ADD TO CART</button>
          </div>
      </div>
  </div>`
  console.log(category)
          let product_container;
-        //  if(category == "women's clothing"){  
-          
-        //    product_container = document.querySelector(`.women's`);
-        //  }
-        //  if(category == "men's clothing"){
-        //   product_container = document.querySelector(".men's");
-
-        //  }
-         
+           
           product_container = document.querySelector(`.${category.substring(0, 1)}_product_container`);
 
          

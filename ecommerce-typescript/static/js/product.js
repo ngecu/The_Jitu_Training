@@ -23,6 +23,7 @@ const getProductDetails = () => __awaiter(void 0, void 0, void 0, function* () {
         const product_title_container = document.querySelector('.product_title_container');
         const product_title = product_title_container.querySelector('h3');
         product_title.innerText = json.title;
+        product_title.style.textTransform = "UPPERCASE";
         const product_image = document.querySelector('.product-image');
         product_image.src = json.image;
         const current_price = document.querySelector('.current_price');
@@ -31,6 +32,10 @@ const getProductDetails = () => __awaiter(void 0, void 0, void 0, function* () {
         product_description.innerHTML = `Description : <br/> ${json.description}`;
         const product_ratings_container = document.querySelector('.product_ratings_container');
         product_ratings_container.innerHTML = `${json.rating.count} reviews`;
+        const add_to_cart_btn = document.querySelector('.add_to_cart');
+        add_to_cart_btn.addEventListener("click", () => {
+            add_to_cart(json.id);
+        });
         console.log(json);
     });
     if (!response.ok) {
@@ -38,10 +43,3 @@ const getProductDetails = () => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 getProductDetails();
-const add_to_cart_btn2 = document.querySelector('.add_to_cart');
-if (add_to_cart_btn2) {
-    console.log("is rthre");
-    add_to_cart_btn2.addEventListener("click", () => {
-        console.log("btn clicked");
-    });
-}

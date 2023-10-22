@@ -13,7 +13,7 @@
 
 .product-image img {
     width: 100%;
-    height: 263px;
+    height: 246px;
 }
 
 .discount-badge {
@@ -81,21 +81,21 @@
 .products-f{
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .company_commitments_container {
     display: flex;
-
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-        flex-direction: column; /* Stack commitments on small screens */
-    }
+    flex-wrap: wrap;
+  
 }
 
 .commitment {
     padding: 10px;
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-        flex-basis: 100%; /* Full width on small screens */
+
+}
+.banner{
+    img{
+        width: 100%;
     }
 }
