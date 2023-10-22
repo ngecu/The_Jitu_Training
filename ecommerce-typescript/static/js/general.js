@@ -34,3 +34,26 @@ const add_to_cart = (product_id) => __awaiter(void 0, void 0, void 0, function* 
         }
     });
 });
+const remove_from_cart = (product_id, index) => {
+    console.log(product_id);
+    let current_cart = JSON.parse(localStorage.getItem("cartItems") || '[]');
+    current_cart.splice(index, 1);
+    console.log(current_cart.length);
+    localStorage.setItem("cartItems", JSON.stringify(current_cart));
+    const wrapper = document.querySelector('.basket-icon-wrapper');
+    const cartItemCount = current_cart.length;
+    if (wrapper) {
+        // console.log(getComputedStyle(wrapper, ':before').getPropertyValue('content'));
+        wrapper.setAttribute('data-count', cartItemCount.toString());
+    }
+    // Find the second <tbody> element
+    const TbodyToRemove = document.querySelector(`table.cart_table tbody:nth-child(${index + 1})`);
+    if (TbodyToRemove) {
+        // Remove the second <tbody> element if it exists
+        TbodyToRemove.remove();
+    }
+    const total_cart_items_span = document.querySelector('.total_cart_items_span');
+    if (total_cart_items_span) {
+        total_cart_items_span.innerText = `${current_cart.length}`;
+    }
+};

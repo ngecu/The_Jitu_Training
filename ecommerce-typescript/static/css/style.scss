@@ -361,9 +361,26 @@ footer {
 }
 }
 
+.navbar-logo{
+  a{
+    text-decoration: none;
+    color: white;
+  }
+}
+
 @media screen and (max-width:768px) {
   .navbar-center,.navbar-menu{
     display: none;
   }
+  .discount-badge{
+    display: none;
+  }
+  nav{
+    .container{
+      margin: 0 2%;
+    }
+  }
+
 
 }
+

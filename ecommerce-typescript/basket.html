@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basket</title>
     <link rel="stylesheet" href="static/css/style.css">
-    <link rel="stylesheet" href="static/css/index.css">
-
-    <title>My Shop</title>
+    <link rel="stylesheet" href="static/css/basket.css">
 </head>
 <body>
     <header>
@@ -44,77 +43,63 @@
             </div>
         </nav>
     </header>
-
     <main>
-        <div class="banner">
-            <img src="https://static.vecteezy.com/system/resources/previews/002/294/859/non_2x/flash-sale-web-banner-design-e-commerce-online-shopping-header-or-footer-banner-free-vector.jpg" alt="">
-        </div>
-
         <div class="container">
-            <div class="categories_container">
-              
+            <div class="cart_total_container">
+                <div class="cart_container">
+                    <table class="cart_table" ></table>
+                </div>
+                <div class="totals_card_container">
+                    <h2>Subtotal (<span class="total_cart_items_span"></span>) items</h2>
+                    <p class="total_sh"> </p>
+
+                    <div class="proceed_btn_container">
+                        <button>Proceed To Checkout</button>
+                    </div>
+                </div>
             </div>
 
-            <div class="products_by_category_container">
-               
-                            
-                                   
-                                </div>
 
-
-                                <div class="company_commitments_container">
-                                    <div class="commitment commitment_1">
-                                        <div class="commitment_title">
-                                            <b><ion-icon name="cart"></ion-icon>Over 1300 products available</b>
-                                        </div>
-                                        <div class="commitment_description">
-                                            My Shop has a wide selection of goods to choose from.
-                                        </div>
-                                    </div>
-                                
-                                    <div class="commitment commitment_2">
-                                        <div class="commitment_title">
-                                            <b><ion-icon name="car"></ion-icon>24/7 Express Delivery</b>
-                                        </div>
-                                        <div class="commitment_description">
-                                            We deliver any time, any day, in less than 1 hour - average: 23 min. We also offer next-day countrywide alcohol delivery in Kenya.
-                                        </div>
-                                    </div>
-                                
-                                    <div class="commitment commitment_3">
-                                        <div class="commitment_title">
-                                            <b><ion-icon name="navigate"></ion-icon>Free pick up</b>
-                                        </div>
-                                        <div class "commitment_description">
-                                            At any of our store locations.
-                                        </div>
-                                    </div>
-                                
-                                    <div class="commitment commitment_4">
-                                        <div class="commitment_title">
-                                            <b><ion-icon name="navigate"></ion-icon>100% Secure Checkout</b>
-                                        </div>
-                                        <div class="commitment_description">
-                                            Pay online with M-Pesa Express, Online VISA (3D Secure), PayPal and BitPay. We also accept Cash and PDQ (card payment) on delivery.
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-
-                            
-                            
-                        </div>
+            <div class="company_commitments_container">
+                <div class="commitment commitment_1">
+                    <div class="commitment_title">
+                        <b><ion-icon name="cart"></ion-icon>Over 1300 products available</b>
                     </div>
-                </div> 
+                    <div class="commitment_description">
+                        My Shop has a wide selection of goods to choose from.
+                    </div>
+                </div>
+            
+                <div class="commitment commitment_2">
+                    <div class="commitment_title">
+                        <b><ion-icon name="car"></ion-icon>24/7 Express Delivery</b>
+                    </div>
+                    <div class="commitment_description">
+                        We deliver any time, any day, in less than 1 hour - average: 23 min. We also offer next-day countrywide alcohol delivery in Kenya.
+                    </div>
+                </div>
+            
+                <div class="commitment commitment_3">
+                    <div class="commitment_title">
+                        <b><ion-icon name="navigate"></ion-icon>Free pick up</b>
+                    </div>
+                    <div class="commitment_description">
+                        At any of our store locations.
+                    </div>
+                </div>
+            
+                <div class="commitment commitment_4">
+                    <div class="commitment_title">
+                        <b><ion-icon name="navigate"></ion-icon>100% Secure Checkout</b>
+                    </div>
+                    <div class="commitment_description">
+                        Pay online with M-Pesa Express, Online VISA (3D Secure), PayPal and BitPay. We also accept Cash and PDQ (card payment) on delivery.
+                    </div>
+                </div>
             </div>
 
         </div>
-
-
-
-
-      
+        
     </main>
 
     <footer>
@@ -173,11 +158,12 @@
             </div>
         </div>
     </footer>
-    
-    <script src="static/js/index.js"></script>
+
+    <script src="static/js/basket.js"></script>
     <script src="static/js/general.js"></script>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
 </body>
 </html>
