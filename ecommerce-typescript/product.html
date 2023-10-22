@@ -10,7 +10,37 @@
     <title>Product Page</title>
 </head>
 <body>
-    
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                
+                    <div class="navbar-logo">
+                        <img src="https://drinksandchill.onrender.com/assets/logo-d3a07d4c.png" height="70" alt=""> M-SHOP
+                    </div>
+                    <div class="navbar-center">
+                        <form action="">
+                            <input type="text" class="form-control" placeholder="Search" name="search">
+                            <button type="submit" class="form-control-button"><ion-icon name="search-outline"></ion-icon></button>
+                        </form>
+                        
+                    </div>
+                    <ul class="navbar-menu">
+                        <li class="nav-item"><a class="nav-link" href="#"><ion-icon name="heart"></ion-icon> WISHLIST</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"><ion-icon name="person"></ion-icon> ACCOUNT</a></li>
+                        <li class="nav-item">
+
+                            <a href="/basket" data-rb-event-key="/basket" class="nav-link"><div class="basket-icon-wrapper icon-text-wrapper" data-count="1">
+                                <ion-icon name="cart"></ion-icon>
+                                <span>BASKET</span></div>
+                            </a>
+
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#"><ion-icon name="arrow-forward"></ion-icon> CHECKOUT</a></li>
+                    </ul>
+               
+            </div>
+        </nav>
+    </header>
 
     <main>
         <div class="container">
@@ -21,7 +51,7 @@
 
                 <div class="product-details-container">
                     <div class="product_title_container">
-                        <h1>Product 1</h1>
+                        <h3>Product 1</h3>
                     </div>
                     <hr>
                     <div class="product_ratings_container">
@@ -29,16 +59,7 @@
                     </div>
                     <hr>
 
-                    <div class="product_price_container">
-                        <div class="prev_price">
-                            Ksh. 200
-                        </div>
-                        <div class="current_price">
-                            Ksh. 180
-                        </div>
-                    </div>
 
-                    <hr>
 
                     <div class="product_description_container">
                         <p class="product_description"></p>
@@ -91,9 +112,109 @@
             </div>
             <div class="reviews_container">
                 <h1>REVIEWS</h1>
+                <div class="reviews">
+                    No Reviews
+                </div>
+            </div>
+
+            <div class="company_commitments_container">
+                <div class="commitment commitment_1">
+                    <div class="commitment_title">
+                        <b><ion-icon name="cart"></ion-icon>Over 1300 products available</b>
+                    </div>
+                    <div class="commitment_description">
+                        My Shop has a wide selection of goods to choose from.
+                    </div>
+                </div>
+            
+                <div class="commitment commitment_2">
+                    <div class="commitment_title">
+                        <b><ion-icon name="car"></ion-icon>24/7 Express Delivery</b>
+                    </div>
+                    <div class="commitment_description">
+                        We deliver any time, any day, in less than 1 hour - average: 23 min. We also offer next-day countrywide alcohol delivery in Kenya.
+                    </div>
+                </div>
+            
+                <div class="commitment commitment_3">
+                    <div class="commitment_title">
+                        <b><ion-icon name="navigate"></ion-icon>Free pick up</b>
+                    </div>
+                    <div class "commitment_description">
+                        At any of our store locations.
+                    </div>
+                </div>
+            
+                <div class="commitment commitment_4">
+                    <div class="commitment_title">
+                        <b><ion-icon name="navigate"></ion-icon>100% Secure Checkout</b>
+                    </div>
+                    <div class="commitment_description">
+                        Pay online with M-Pesa Express, Online VISA (3D Secure), PayPal and BitPay. We also accept Cash and PDQ (card payment) on delivery.
+                    </div>
+                </div>
             </div>
         </div>
+
     </main>
+
+    <footer>
+        <div class="footer_container">
+            <div class="more_details_container">
+                <div class="about_container">
+                    <h2>About</h2>
+                    <ul>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 4</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="about_container">
+                    <h2>About</h2>
+                    <ul>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 4</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="about_container">
+                    <h2>About</h2>
+                    <ul>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 4</a></li>
+                    </ul>
+                </div>
+
+                <div class="about_container">
+                    <h2>About</h2>
+                    <ul>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+        <div class="copyright_container">
+            <div class="copyright_holder">
+                © My Shop <span class="year_holder">2023</span>
+            </div>
+            <div class="phone_number_holder">
+                <div>Phone: 0707-583-092</div>
+            </div>
+        </div>
+    </footer>
+    
     <script src="static/js/product.js"></script>
     <script src="static/js/general.js"></script>
 

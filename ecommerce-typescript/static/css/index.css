@@ -56,11 +56,11 @@
   /* Add your rating styles here */
 }
 
-.add-to-cart-btn-container {
+.add_to_cart-btn-container {
   margin-top: 15px;
 }
 
-.add-to-cart {
+.add_to_cart {
   background-color: #4BBF73;
   color: #fff;
   border: none;
@@ -71,7 +71,7 @@
   width: 100%;
 }
 
-.add-to-cart:hover {
+.add_to_cart:hover {
   background-color: #0056b3;
 }
 

@@ -25,19 +25,19 @@ interface Product {
 
 const createCategoryProductCard = (product:Product) => {
     const productCard = document.createElement('div');
-    productCard.className = 'product-card';
+    productCard.className = 'product-card card';
 
     const productImageContainer = document.createElement('div');
     productImageContainer.className = 'product-image';
 
     const productImage = document.createElement('img');
-    productImage.src = product?.image;
-    productImage.alt = product?.title;
+    productImage.src = product.image;
+    productImage.alt = 'Product Image';
 
     const discountBadgeContainer = document.createElement('div');
     discountBadgeContainer.className = 'discount-badge';
     const actualDiscount = document.createElement('p');
-    actualDiscount.innerText = `product?.discount`;
+    actualDiscount.innerText = '-3%';
 
     const cardBody = document.createElement('div');
     cardBody.className = 'card-body';
@@ -51,9 +51,9 @@ const createCategoryProductCard = (product:Product) => {
     const productPriceContainer = document.createElement('div');
     productPriceContainer.className = 'product-price-container';
     const prevPrice = document.createElement('div');
-    prevPrice.innerText = `product.prevPrice`;
+    prevPrice.innerText = 'Ksh. 200';
     const currentPrice = document.createElement('div');
-    currentPrice.innerText = `${product.price}`;
+    currentPrice.innerText = `Ksh. ${product.price}`;
 
     const ratingsContainer = document.createElement('div');
     ratingsContainer.className = 'ratings-container';
@@ -62,12 +62,10 @@ const createCategoryProductCard = (product:Product) => {
     addToCartBtnContainer.className = 'add-to-cart-btn-container';
 
     const addToCart = document.createElement('button');
-    addToCart.className = 'add-to-cart';
-    addToCart.classList.add('add_to_cart');
+    addToCart.className = 'add_to_cart';
 
-    addToCart.innerText = 'Add To Cart';
+    addToCart.innerText = 'ADD TO CART';
 
-    // Construct the card structure
     discountBadgeContainer.appendChild(actualDiscount);
     productImageContainer.appendChild(productImage);
     productImageContainer.appendChild(discountBadgeContainer);
@@ -85,6 +83,7 @@ const createCategoryProductCard = (product:Product) => {
 
     return productCard;
 };
+
 
 
 const getCategotryProducts = async ()=>{
@@ -121,7 +120,7 @@ getCategotryProducts()
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    const add_to_cart_btn3 = document.querySelectorAll('.add-to-cart ') as NodeListOf<HTMLButtonElement>;
+    const add_to_cart_btn3 = document.querySelectorAll('.add_to_cart ') as NodeListOf<HTMLButtonElement>;
     // console.log(add_to_cart_btn3);
 
     if (add_to_cart_btn3) {

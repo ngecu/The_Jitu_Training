@@ -47,7 +47,7 @@ const createCategoryProductCards = async (category:string)=>{
   data.then(json =>{
      console.log(json);
      json.slice(0,4).forEach((el:Product) => {
-     const card = `    <div class="product-card card">
+     const card = `<div class="product-card card">
      <div class="product-image">
          <img src="${el.image}" alt="Product Image">
          <div class="discount-badge"><p>-3%</p></div>
@@ -66,28 +66,28 @@ const createCategoryProductCards = async (category:string)=>{
          </div>
  
          <div class="ratings-container">
-             <!-- Add your rating elements here -->
+            
          </div>
  
          <div class="add-to-cart-btn-container">
-             <button class="add-to-cart">ADD TO CART</button>
+             <button class="add_to_cart">ADD TO CART</button>
          </div>
      </div>
  </div>`
-
-         // Append the HTML content for each category card, don't overwrite it
+ console.log(category)
          let product_container;
-         if(category == "women's clothing"){  
-           product_container = document.querySelector('.women\\\'s\\ clothing_product_container');
-         }
-         if(category == "men's clothing"){
-          product_container = document.querySelector('.men\\\'s\\ clothing_product_container');
+        //  if(category == "women's clothing"){  
+          
+        //    product_container = document.querySelector(`.women's`);
+        //  }
+        //  if(category == "men's clothing"){
+        //   product_container = document.querySelector(".men's");
 
-         }
-         else{
-           product_container = document.querySelector(`.${category}_product_container`);
+        //  }
+         
+          product_container = document.querySelector(`.${category.substring(0, 1)}_product_container`);
 
-         }
+         
          if (product_container) {
           product_container.innerHTML += card;
          }
@@ -109,13 +109,12 @@ const getCategories = async ()=>{
           createCategoryProductCards(el)
             const category_card = createCategoryCard(el)
             categoies_container.appendChild(category_card)
-                    // Accumulate the HTML content for each category card
             const cat = `
             <div class="new_${el}_container">
                 <h6>${el}</h6>
 
                 <div class="products_by_category">
-                <div class="${el}_product_container products-f">
+                <div class="${el.substring(0, 1)}_product_container products-f">
 
                 </div>
                 </div>

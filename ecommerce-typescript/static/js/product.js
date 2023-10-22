@@ -21,14 +21,16 @@ const getProductDetails = () => __awaiter(void 0, void 0, void 0, function* () {
     const data = response.json();
     data.then(json => {
         const product_title_container = document.querySelector('.product_title_container');
-        const product_title = product_title_container.querySelector('h1');
+        const product_title = product_title_container.querySelector('h3');
         product_title.innerText = json.title;
         const product_image = document.querySelector('.product-image');
         product_image.src = json.image;
         const current_price = document.querySelector('.current_price');
         current_price.innerText = `Ksh. ${json.price}`;
         const product_description = document.querySelector('.product_description');
-        product_description.innerText = json.description;
+        product_description.innerHTML = `Description : <br/> ${json.description}`;
+        const product_ratings_container = document.querySelector('.product_ratings_container');
+        product_ratings_container.innerHTML = `${json.rating.count} reviews`;
         console.log(json);
     });
     if (!response.ok) {

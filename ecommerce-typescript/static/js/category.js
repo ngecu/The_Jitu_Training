@@ -16,16 +16,16 @@ if (CATEGORY_TYPE != null) {
 }
 const createCategoryProductCard = (product) => {
     const productCard = document.createElement('div');
-    productCard.className = 'product-card';
+    productCard.className = 'product-card card';
     const productImageContainer = document.createElement('div');
     productImageContainer.className = 'product-image';
     const productImage = document.createElement('img');
-    productImage.src = product === null || product === void 0 ? void 0 : product.image;
-    productImage.alt = product === null || product === void 0 ? void 0 : product.title;
+    productImage.src = product.image;
+    productImage.alt = 'Product Image';
     const discountBadgeContainer = document.createElement('div');
     discountBadgeContainer.className = 'discount-badge';
     const actualDiscount = document.createElement('p');
-    actualDiscount.innerText = `product?.discount`;
+    actualDiscount.innerText = '-3%';
     const cardBody = document.createElement('div');
     cardBody.className = 'card-body';
     const productTitleContainer = document.createElement('div');
@@ -36,18 +36,16 @@ const createCategoryProductCard = (product) => {
     const productPriceContainer = document.createElement('div');
     productPriceContainer.className = 'product-price-container';
     const prevPrice = document.createElement('div');
-    prevPrice.innerText = `product.prevPrice`;
+    prevPrice.innerText = 'Ksh. 200';
     const currentPrice = document.createElement('div');
-    currentPrice.innerText = `${product.price}`;
+    currentPrice.innerText = `Ksh. ${product.price}`;
     const ratingsContainer = document.createElement('div');
     ratingsContainer.className = 'ratings-container';
     const addToCartBtnContainer = document.createElement('div');
     addToCartBtnContainer.className = 'add-to-cart-btn-container';
     const addToCart = document.createElement('button');
-    addToCart.className = 'add-to-cart';
-    addToCart.classList.add('add_to_cart');
-    addToCart.innerText = 'Add To Cart';
-    // Construct the card structure
+    addToCart.className = 'add_to_cart';
+    addToCart.innerText = 'ADD TO CART';
     discountBadgeContainer.appendChild(actualDiscount);
     productImageContainer.appendChild(productImage);
     productImageContainer.appendChild(discountBadgeContainer);
@@ -85,7 +83,7 @@ const getCategotryProducts = () => __awaiter(void 0, void 0, void 0, function* (
 });
 getCategotryProducts();
 document.addEventListener('DOMContentLoaded', () => {
-    const add_to_cart_btn3 = document.querySelectorAll('.add-to-cart ');
+    const add_to_cart_btn3 = document.querySelectorAll('.add_to_cart ');
     // console.log(add_to_cart_btn3);
     if (add_to_cart_btn3) {
         add_to_cart_btn3.forEach(element => {

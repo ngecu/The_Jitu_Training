@@ -19,7 +19,7 @@ const getProductDetails = async ()=>{
 
     data.then(json =>{
         const product_title_container  = document.querySelector('.product_title_container') as HTMLDivElement;
-        const product_title = product_title_container.querySelector('h1') as HTMLElement;
+        const product_title = product_title_container.querySelector('h3') as HTMLElement;
         product_title.innerText = json.title;
 
         const product_image = document.querySelector('.product-image') as HTMLImageElement;
@@ -29,8 +29,10 @@ const getProductDetails = async ()=>{
         current_price.innerText = `Ksh. ${json.price}`;
         
         const product_description = document.querySelector('.product_description') as HTMLImageElement;
-        product_description.innerText = json.description
+        product_description.innerHTML = `Description : <br/> ${json.description}`
 
+        const product_ratings_container = document.querySelector('.product_ratings_container') as HTMLDivElement;
+        product_ratings_container.innerHTML = `${json.rating.count} reviews`
         
         
         console.log(json);

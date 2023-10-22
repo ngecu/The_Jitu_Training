@@ -15,6 +15,9 @@
 .product-details-container {
     flex: 2;
     padding: 20px;
+    div{
+        margin: 2% 0;
+    }
 }
 
 .product_title_container h1 {
@@ -40,11 +43,11 @@
     color: #999;
 }
 
-.current_price {
-    font-size: 24px;
-    font-weight: bold;
-    color: #007bff;
-}
+// .current_price {
+//     font-size: 24px;
+//     font-weight: bold;
+//     color: #007bff;
+// }
 
 .product_description_container p {
     font-size: 16px;
@@ -71,20 +74,39 @@ select {
 }
 
 .add_to_cart {
-    background-color: #007bff;
+  
     color: #fff;
     border: none;
     border-radius: 5px;
-    padding: 10px 20px;
+  
     cursor: pointer;
     font-weight: bold;
+    width: 100%;
 }
 
-.add_to_cart:hover {
-    background-color: #0056b3;
-}
+
 
 .reviews_container h1 {
     font-size: 20px;
     margin-top: 20px;
+}
+
+.reviews{
+    
+        color: #10516c;
+        background-color: #d2ebf5;
+        border-color: #c0e3f2;
+        position: relative;
+  padding: .75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+
+}
+
+hr{
+    border: 1px solid rgba(0,0,0,.125);
 }
