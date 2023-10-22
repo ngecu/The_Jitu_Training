@@ -24,6 +24,10 @@ interface Product {
 }
 
 const createCategoryProductCard = (product:Product) => {
+
+    const random_discount = Math.floor(Math.random() * 5) + 1;
+    const previous_price = ((100 - random_discount)/100 * product.price)
+
     const productCard = document.createElement('div');
     productCard.className = 'product-card card';
 
@@ -37,7 +41,7 @@ const createCategoryProductCard = (product:Product) => {
     const discountBadgeContainer = document.createElement('div');
     discountBadgeContainer.className = 'discount-badge';
     const actualDiscount = document.createElement('p');
-    actualDiscount.innerText = '-3%';
+    actualDiscount.innerText = `-${random_discount}%`;
 
     const cardBody = document.createElement('div');
     cardBody.className = 'card-body';
@@ -51,7 +55,7 @@ const createCategoryProductCard = (product:Product) => {
     const productPriceContainer = document.createElement('div');
     productPriceContainer.className = 'product-price-container';
     const prevPrice = document.createElement('div');
-    prevPrice.innerText = 'Ksh. 200';
+    prevPrice.innerText = `Ksh. ${previous_price}`;
     const currentPrice = document.createElement('div');
     currentPrice.innerText = `Ksh. ${product.price}`;
 

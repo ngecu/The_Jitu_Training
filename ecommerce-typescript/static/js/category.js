@@ -15,6 +15,8 @@ if (CATEGORY_TYPE != null) {
     document.title = CATEGORY_TYPE;
 }
 const createCategoryProductCard = (product) => {
+    const random_discount = Math.floor(Math.random() * 5) + 1;
+    const previous_price = ((100 - random_discount) / 100 * product.price);
     const productCard = document.createElement('div');
     productCard.className = 'product-card card';
     const productImageContainer = document.createElement('div');
@@ -25,7 +27,7 @@ const createCategoryProductCard = (product) => {
     const discountBadgeContainer = document.createElement('div');
     discountBadgeContainer.className = 'discount-badge';
     const actualDiscount = document.createElement('p');
-    actualDiscount.innerText = '-3%';
+    actualDiscount.innerText = `-${random_discount}%`;
     const cardBody = document.createElement('div');
     cardBody.className = 'card-body';
     const productTitleContainer = document.createElement('div');
@@ -36,7 +38,7 @@ const createCategoryProductCard = (product) => {
     const productPriceContainer = document.createElement('div');
     productPriceContainer.className = 'product-price-container';
     const prevPrice = document.createElement('div');
-    prevPrice.innerText = 'Ksh. 200';
+    prevPrice.innerText = `Ksh. ${previous_price}`;
     const currentPrice = document.createElement('div');
     currentPrice.innerText = `Ksh. ${product.price}`;
     const ratingsContainer = document.createElement('div');
