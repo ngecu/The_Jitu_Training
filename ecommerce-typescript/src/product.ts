@@ -45,3 +45,13 @@ const getProductDetails = async ()=>{
 }
 
 getProductDetails()
+
+
+const add_to_cart_btn2 = document.querySelector('.add_to_cart') as HTMLButtonElement;
+if(add_to_cart_btn2){
+  console.log("is rthre");
+
+    add_to_cart_btn2.addEventListener("click",()=>{
+        console.log("btn clicked")
+    })
+}

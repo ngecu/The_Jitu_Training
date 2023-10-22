@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/product.css">
+
+
     <title>Product Page</title>
 </head>
 <body>
-    <h1>Product Page</h1>
+    
 
     <main>
         <div class="container">
@@ -19,9 +23,12 @@
                     <div class="product_title_container">
                         <h1>Product 1</h1>
                     </div>
-                    <div class="product_description_container">
-                        <p class="product_description"></p>
+                    <hr>
+                    <div class="product_ratings_container">
+
                     </div>
+                    <hr>
+
                     <div class="product_price_container">
                         <div class="prev_price">
                             Ksh. 200
@@ -32,16 +39,66 @@
                     </div>
 
                     <hr>
-                    
-                    <div class="add_to_cart_btn_container">
-                        <button class="add_to_cart">ADD TO CART</button>
+
+                    <div class="product_description_container">
+                        <p class="product_description"></p>
                     </div>
+                    
+                    <table>
+                        <tr>
+                            <td>Price</td>
+                            <td class="current_price"></td>
+                        </tr>
+
+                        <tr>
+                            <td>Status</td>
+                            <td >In Stock</td>
+                        </tr>
+
+
+                        <tr>
+                            <td>Quantity</td>
+                            <td>
+                                <select name="" id="">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+
+                                </select>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div class="add_to_cart_btn_container">
+                                    <button class="add_to_cart">ADD TO CART</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                
+                    
+                  
 
                 </div>
+            </div>
+            <div class="reviews_container">
+                <h1>REVIEWS</h1>
             </div>
         </div>
     </main>
     <script src="static/js/product.js"></script>
+    <script src="static/js/general.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </body>
 

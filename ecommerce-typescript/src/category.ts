@@ -23,66 +23,80 @@ interface Product {
     title:string
 }
 
-const createCategoryProductCard = (product:Product)=>{const category_card = document.createElement('div');
-console.log(product);
+const createCategoryProductCard = (product:Product) => {
+    const productCard = document.createElement('div');
+    productCard.className = 'product-card';
 
-const product_container = document.createElement('div');
-const product_card = document.createElement('div');
-const product_image_container = document.createElement('div');
-const product_image = document.createElement('img');
-product_image.src = product?.image
-const discount_badge_container = document.createElement('div');
-const actual_discount = document.createElement('p');
+    const productImageContainer = document.createElement('div');
+    productImageContainer.className = 'product-image';
 
-const card_body = document.createElement('div');
-const product_title_container = document.createElement('div');
-const product_title = document.createElement('a');
-product_title.href = `product.html?product=${product.id}`
-product_title.innerText = product.title
+    const productImage = document.createElement('img');
+    productImage.src = product?.image;
+    productImage.alt = product?.title;
 
+    const discountBadgeContainer = document.createElement('div');
+    discountBadgeContainer.className = 'discount-badge';
+    const actualDiscount = document.createElement('p');
+    actualDiscount.innerText = `product?.discount`;
 
-const product_price_container = document.createElement('div');
-const prev_price = document.createElement('div');
-const current_price = document.createElement('div');
+    const cardBody = document.createElement('div');
+    cardBody.className = 'card-body';
 
+    const productTitleContainer = document.createElement('div');
+    productTitleContainer.className = 'product-title';
+    const productTitle = document.createElement('a');
+    productTitle.href = `product.html?product=${product.id}`;
+    productTitle.innerText = product.title;
 
-const ratings_container = document.createElement('div');
-ratings_container.className = "ratings_container"
+    const productPriceContainer = document.createElement('div');
+    productPriceContainer.className = 'product-price-container';
+    const prevPrice = document.createElement('div');
+    prevPrice.innerText = `product.prevPrice`;
+    const currentPrice = document.createElement('div');
+    currentPrice.innerText = `${product.price}`;
 
-const add_to_cart_btn_container = document.createElement('div')
-add_to_cart_btn_container.className = "add_to_cart_btn_container"
+    const ratingsContainer = document.createElement('div');
+    ratingsContainer.className = 'ratings-container';
 
-const add_to_cart = document.createElement('button');
-add_to_cart.className ="add_to_cart"
+    const addToCartBtnContainer = document.createElement('div');
+    addToCartBtnContainer.className = 'add-to-cart-btn-container';
 
-add_to_cart_btn_container.appendChild(add_to_cart)
-product_price_container.appendChild(prev_price)
-product_price_container.appendChild(current_price)
+    const addToCart = document.createElement('button');
+    addToCart.className = 'add-to-cart';
+    addToCart.classList.add('add_to_cart');
 
-card_body.appendChild(product_title_container);
-product_title_container.appendChild(product_title);
-card_body.appendChild(product_price_container);
-card_body.appendChild(ratings_container);
-card_body.appendChild(add_to_cart_btn_container);
+    addToCart.innerText = 'Add To Cart';
 
-product_image_container.appendChild(product_image)
-product_image_container.appendChild(discount_badge_container)
-discount_badge_container.appendChild(actual_discount)
+    // Construct the card structure
+    discountBadgeContainer.appendChild(actualDiscount);
+    productImageContainer.appendChild(productImage);
+    productImageContainer.appendChild(discountBadgeContainer);
+    productTitleContainer.appendChild(productTitle);
+    productPriceContainer.appendChild(prevPrice);
+    productPriceContainer.appendChild(currentPrice);
+    cardBody.appendChild(productTitleContainer);
+    cardBody.appendChild(productPriceContainer);
+    cardBody.appendChild(ratingsContainer);
+    cardBody.appendChild(addToCartBtnContainer);
+    addToCartBtnContainer.appendChild(addToCart);
 
-product_card.appendChild(card_body)
-product_card.appendChild(product_image_container)
+    productCard.appendChild(productImageContainer);
+    productCard.appendChild(cardBody);
 
+    return productCard;
+};
 
-product_container.appendChild(product_card)
-console.log(product_container);
-
-return product_container
-
-}
 
 const getCategotryProducts = async ()=>{
-    const product_wrapper = document.querySelector('.products_by_category') as HTMLDivElement;
+    const product_wrapper = document.querySelector('.product_container') as HTMLDivElement;
     const CATEGORY_PRODUCT_API = `https://fakestoreapi.com/products/category/${CATEGORY_TYPE}`
+    const category_name_span = document.querySelector('.category_span') as HTMLSpanElement
+    
+    if(category_name_span && CATEGORY_TYPE){
+        category_name_span.innerText = CATEGORY_TYPE;
+        category_name_span.style.textTransform ="UPPERCASE"
+
+    }
 
   const response = await fetch(CATEGORY_PRODUCT_API)
     const data = response.json();
@@ -104,3 +118,18 @@ const getCategotryProducts = async ()=>{
 }
 
 getCategotryProducts()
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const add_to_cart_btn3 = document.querySelectorAll('.add-to-cart ') as NodeListOf<HTMLButtonElement>;
+    // console.log(add_to_cart_btn3);
+
+    if (add_to_cart_btn3) {
+        add_to_cart_btn3.forEach(element => {
+            element.addEventListener('click', () => {
+                console.log('Button clicked');
+            });
+        });
+    }
+});
+
