@@ -338,4 +338,11 @@ footer {
   nav .container {
     margin: 0 2%;
   }
+}
+.product-title a {
+  margin: 10px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%; /* Set the maximum width you prefer */
 }/*# sourceMappingURL=style.css.map */

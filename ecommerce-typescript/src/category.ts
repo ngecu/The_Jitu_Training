@@ -26,66 +26,37 @@ interface Product {
 const createCategoryProductCard = (product:Product) => {
 
     const random_discount = Math.floor(Math.random() * 5) + 1;
-    const previous_price = ((100 - random_discount)/100 * product.price)
+    const previous_price = ((100 - random_discount)/100 * product.price).toFixed(2)
 
-    const productCard = document.createElement('div');
-    productCard.className = 'product-card card';
+    const card = `<div class="product-card card">
+     <div class="product-image">
+         <img src="${product.image}" alt="Product Image">
+         <div class="discount-badge"><p>-${random_discount}%</p></div>
+     </div>
+     <div class="card-body">
+         <div class="product-title">
+             <a href="product.html?product=${product.id}">${product.title}</a>
+         </div>
+         <div class="product-price-container">
+             <div class="prev-price">
+                 Ksh. ${previous_price}
+             </div>
+             <div class="current-price">
+                 Ksh. ${product.price}
+             </div>
+         </div>
+ 
+         <div class="ratings-container">
+            
+         </div>
+ 
+         <div class="add-to-cart-btn-container">
+         <button class="add_to_cart" onclick="add_to_cart(${product.id})">ADD TO CART</button>
+         </div>
+     </div>
+ </div>`
 
-    const productImageContainer = document.createElement('div');
-    productImageContainer.className = 'product-image';
-
-    const productImage = document.createElement('img');
-    productImage.src = product.image;
-    productImage.alt = 'Product Image';
-
-    const discountBadgeContainer = document.createElement('div');
-    discountBadgeContainer.className = 'discount-badge';
-    const actualDiscount = document.createElement('p');
-    actualDiscount.innerText = `-${random_discount}%`;
-
-    const cardBody = document.createElement('div');
-    cardBody.className = 'card-body';
-
-    const productTitleContainer = document.createElement('div');
-    productTitleContainer.className = 'product-title';
-    const productTitle = document.createElement('a');
-    productTitle.href = `product.html?product=${product.id}`;
-    productTitle.innerText = product.title;
-
-    const productPriceContainer = document.createElement('div');
-    productPriceContainer.className = 'product-price-container';
-    const prevPrice = document.createElement('div');
-    prevPrice.innerText = `Ksh. ${previous_price}`;
-    const currentPrice = document.createElement('div');
-    currentPrice.innerText = `Ksh. ${product.price}`;
-
-    const ratingsContainer = document.createElement('div');
-    ratingsContainer.className = 'ratings-container';
-
-    const addToCartBtnContainer = document.createElement('div');
-    addToCartBtnContainer.className = 'add-to-cart-btn-container';
-
-    const addToCart = document.createElement('button');
-    addToCart.className = 'add_to_cart';
-
-    addToCart.innerText = 'ADD TO CART';
-
-    discountBadgeContainer.appendChild(actualDiscount);
-    productImageContainer.appendChild(productImage);
-    productImageContainer.appendChild(discountBadgeContainer);
-    productTitleContainer.appendChild(productTitle);
-    productPriceContainer.appendChild(prevPrice);
-    productPriceContainer.appendChild(currentPrice);
-    cardBody.appendChild(productTitleContainer);
-    cardBody.appendChild(productPriceContainer);
-    cardBody.appendChild(ratingsContainer);
-    cardBody.appendChild(addToCartBtnContainer);
-    addToCartBtnContainer.appendChild(addToCart);
-
-    productCard.appendChild(productImageContainer);
-    productCard.appendChild(cardBody);
-
-    return productCard;
+    return card;
 };
 
 
@@ -107,7 +78,7 @@ const getCategotryProducts = async ()=>{
         json.forEach((element:Product) => {
 
             const product_card =createCategoryProductCard(element)
-            product_wrapper.appendChild(product_card)
+            product_wrapper.innerHTML +=product_card
         });
       
     }

@@ -46,7 +46,7 @@ const createCategoryProductCards = async (category:string)=>{
      json.slice(0,4).forEach((el:Product) => {
 
       const random_discount = Math.floor(Math.random() * 5) + 1;
-      const previous_price = ((100 - random_discount)/100 * el.price)
+      const previous_price = ((100 - random_discount) / 100 * el.price).toFixed(2);
 
      const card = `<div class="product-card card">
      <div class="product-image">

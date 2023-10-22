@@ -382,5 +382,18 @@ footer {
   }
 
 
+
+
 }
 
+
+
+.product-title a {
+  // font-size: 16px;
+  // font-weight: bold;
+  margin: 10px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%; /* Set the maximum width you prefer */
+}
