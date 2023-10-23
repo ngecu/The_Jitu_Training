@@ -11,6 +11,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 const queryString2 = window.location.search;
 const urlParams2 = new URLSearchParams(queryString2);
 const PRODUCT_ID = urlParams2.get('product');
+if (!PRODUCT_ID) {
+    alert("No product found");
+}
 const getProductDetails = () => __awaiter(void 0, void 0, void 0, function* () {
     if (PRODUCT_ID != null) {
         document.title = PRODUCT_ID;
@@ -31,7 +34,15 @@ const getProductDetails = () => __awaiter(void 0, void 0, void 0, function* () {
         const product_description = document.querySelector('.product_description');
         product_description.innerHTML = `Description : <br/> ${json.description}`;
         const product_ratings_container = document.querySelector('.product_ratings_container');
-        product_ratings_container.innerHTML = `${json.rating.count} reviews`;
+        const full_stars = Math.floor(json.rating.rate);
+        const zero_stars = 5 - full_stars;
+        for (let index = 0; index < full_stars; index++) {
+            product_ratings_container.innerHTML += `<ion-icon name="star"></ion-icon>`;
+        }
+        for (let index = 0; index < zero_stars; index++) {
+            product_ratings_container.innerHTML += `<ion-icon name="star-outline"></ion-icon>`;
+        }
+        product_ratings_container.innerHTML += `${json.rating.count} reviews`;
         const add_to_cart_btn = document.querySelector('.add_to_cart');
         add_to_cart_btn.addEventListener("click", () => {
             add_to_cart(json.id);

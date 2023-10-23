@@ -11,6 +11,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+const hideToast = () => {
+    const toastContainer = document.querySelector('.toast-container');
+    toastContainer.style.transform = 'translateX(100%)';
+};
+const showToast = (message) => {
+    const toastContainer = document.querySelector('.toast-container');
+    const toastMessage = toastContainer.querySelector('.toast-message');
+    toastMessage.innerHTML = message;
+    toastContainer.style.transform = 'translateX(0)';
+    setTimeout(hideToast, 5000);
+};
 const add_to_cart = (product_id) => __awaiter(void 0, void 0, void 0, function* () {
     console.log(product_id);
     const CATEGORY_PRODUCT_API = `https://fakestoreapi.com/products/${product_id}`;
@@ -25,6 +36,7 @@ const add_to_cart = (product_id) => __awaiter(void 0, void 0, void 0, function* 
             current_cart.push(json);
             localStorage.setItem("cartItems", JSON.stringify(current_cart));
             console.log("Updated cart items:", current_cart);
+            showToast("successfully added");
         }
         const wrapper = document.querySelector('.basket-icon-wrapper');
         const cartItemCount = current_cart.length;
@@ -40,6 +52,7 @@ const remove_from_cart = (product_id, index) => {
     current_cart.splice(index, 1);
     console.log(current_cart.length);
     localStorage.setItem("cartItems", JSON.stringify(current_cart));
+    showToast("successfully removed");
     const wrapper = document.querySelector('.basket-icon-wrapper');
     const cartItemCount = current_cart.length;
     if (wrapper) {

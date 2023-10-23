@@ -93,9 +93,11 @@ const createCategoryProductCards = async (category:string)=>{
 const getCategories = async ()=>{
     const categoies_container = document.querySelector('.categories_container') as HTMLDivElement
   const response = await fetch(CATEGORIES_API_URI)
+  // console.log("my response is ",response);
+  
     const data = response.json();
     data.then(json =>{
-        // console.log(json);
+        console.log("this is my josn data ",json);
         localStorage.clear()
         localStorage.setItem("categories",json)
         json.forEach((el:string) => {

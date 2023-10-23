@@ -2,6 +2,10 @@ const queryString2 = window.location.search;
 const urlParams2 = new URLSearchParams(queryString2);
 const PRODUCT_ID   = urlParams2.get('product')
 
+if(!PRODUCT_ID){
+  alert("No product found")
+}
+
 
 
 const getProductDetails = async ()=>{
@@ -33,7 +37,20 @@ const getProductDetails = async ()=>{
         product_description.innerHTML = `Description : <br/> ${json.description}`
 
         const product_ratings_container = document.querySelector('.product_ratings_container') as HTMLDivElement;
-        product_ratings_container.innerHTML = `${json.rating.count} reviews`
+        const full_stars:number = Math.floor(json.rating.rate)
+        const zero_stars:number = 5-full_stars;
+        
+        for (let index = 0; index < full_stars; index++) {
+          product_ratings_container.innerHTML += `<ion-icon name="star"></ion-icon>`;
+          
+        }
+        for (let index = 0; index < zero_stars; index++) {
+          product_ratings_container.innerHTML += `<ion-icon name="star-outline"></ion-icon>`
+          
+        }
+
+        
+        product_ratings_container.innerHTML += `${json.rating.count} reviews`
         
         const add_to_cart_btn = document.querySelector('.add_to_cart') as HTMLButtonElement;
         add_to_cart_btn.addEventListener("click",()=>{
