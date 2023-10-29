@@ -1,7 +1,4 @@
 "use strict";
-// window.onload = function(){
-//     const add_to_cart_btn = document.querySelectorAll('.add_to_cart');
-//     console.log("btns are ",add_to_cart_btn);
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -12,28 +9,30 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 const add_to_cart = (product_id) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log(product_id);
     const CATEGORY_PRODUCT_API = `https://fakestoreapi.com/products/${product_id}`;
-    const response = yield fetch(CATEGORY_PRODUCT_API);
-    const data = response.json();
-    data.then(json => {
+    try {
+        const response = yield fetch(CATEGORY_PRODUCT_API);
+        const data = yield response.json();
         let current_cart = JSON.parse(localStorage.getItem("cartItems") || '[]');
-        if (current_cart.some(item => (item === null || item === void 0 ? void 0 : item.id) === json.id)) {
-            alert("Item exists in the cart");
+        const productInCartIndex = current_cart.findIndex((item) => (item === null || item === void 0 ? void 0 : item.id) === data.id);
+        if (productInCartIndex !== -1) {
+            current_cart[productInCartIndex].count += 1;
         }
         else {
-            current_cart.push(json);
-            localStorage.setItem("cartItems", JSON.stringify(current_cart));
-            console.log("Updated cart items:", current_cart);
-            showToast();
+            data.count = 1;
+            current_cart.push(data);
         }
+        localStorage.setItem("cartItems", JSON.stringify(current_cart));
+        showToast();
         const wrapper = document.querySelector('.basket-icon-wrapper');
         const cartItemCount = current_cart.length;
         if (wrapper) {
-            // console.log(getComputedStyle(wrapper, ':before').getPropertyValue('content'));
             wrapper.setAttribute('data-count', cartItemCount.toString());
         }
-    });
+    }
+    catch (error) {
+        console.error("Error adding to cart:", error);
+    }
 });
 function showToast() {
     var x = document.getElementById("snackbar");
@@ -43,15 +42,12 @@ function showToast() {
     }
 }
 const remove_from_cart = (product_id, index) => {
-    console.log(product_id);
     let current_cart = JSON.parse(localStorage.getItem("cartItems") || '[]');
     current_cart.splice(index, 1);
-    console.log(current_cart.length);
     localStorage.setItem("cartItems", JSON.stringify(current_cart));
     const wrapper = document.querySelector('.basket-icon-wrapper');
     const cartItemCount = current_cart.length;
     if (wrapper) {
-        // console.log(getComputedStyle(wrapper, ':before').getPropertyValue('content'));
         wrapper.setAttribute('data-count', cartItemCount.toString());
     }
     const TbodyToRemove = document.querySelector(`table.cart_table tbody:nth-child(${index + 1})`);
@@ -64,3 +60,15 @@ const remove_from_cart = (product_id, index) => {
     }
     showToast();
 };
+const checkCart = () => {
+    const wrapper = document.querySelector('.basket-icon-wrapper');
+    let cartItemCount = 0;
+    let current_cart = JSON.parse(localStorage.getItem("cartItems") || '[]');
+    current_cart.forEach((item) => {
+        cartItemCount += item.count;
+        if (wrapper) {
+            wrapper.setAttribute('data-count', cartItemCount.toString());
+        }
+    });
+};
+checkCart();

@@ -47,7 +47,6 @@ const getProductDetails = () => __awaiter(void 0, void 0, void 0, function* () {
         add_to_cart_btn.addEventListener("click", () => {
             add_to_cart(json.id);
         });
-        console.log(json);
     });
     if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);

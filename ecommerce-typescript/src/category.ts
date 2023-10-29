@@ -96,12 +96,10 @@ getCategotryProducts()
 
 document.addEventListener('DOMContentLoaded', () => {
     const add_to_cart_btn3 = document.querySelectorAll('.add_to_cart ') as NodeListOf<HTMLButtonElement>;
-    // console.log(add_to_cart_btn3);
 
     if (add_to_cart_btn3) {
         add_to_cart_btn3.forEach(element => {
             element.addEventListener('click', () => {
-                console.log('Button clicked');
             });
         });
     }

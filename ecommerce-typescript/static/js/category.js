@@ -69,11 +69,9 @@ const getCategotryProducts = () => __awaiter(void 0, void 0, void 0, function* (
 getCategotryProducts();
 document.addEventListener('DOMContentLoaded', () => {
     const add_to_cart_btn3 = document.querySelectorAll('.add_to_cart ');
-    // console.log(add_to_cart_btn3);
     if (add_to_cart_btn3) {
         add_to_cart_btn3.forEach(element => {
             element.addEventListener('click', () => {
-                console.log('Button clicked');
             });
         });
     }

@@ -42,7 +42,6 @@ const createCategoryProductCards = async (category:string)=>{
   const response = await fetch(`https://fakestoreapi.com/products/category/${category}`)
   const data = response.json();
   data.then(json =>{
-     console.log(json);
      json.slice(0,4).forEach((el:Product) => {
 
       const random_discount = Math.floor(Math.random() * 5) + 1;
@@ -75,7 +74,6 @@ const createCategoryProductCards = async (category:string)=>{
          </div>
      </div>
  </div>`
- console.log(category)
          let product_container;
            
           product_container = document.querySelector(`.${category.substring(0, 1)}_product_container`);
@@ -93,12 +91,9 @@ const createCategoryProductCards = async (category:string)=>{
 const getCategories = async ()=>{
     const categoies_container = document.querySelector('.categories_container') as HTMLDivElement
   const response = await fetch(CATEGORIES_API_URI)
-  // console.log("my response is ",response);
   
     const data = response.json();
-    data.then(json =>{
-        console.log("this is my josn data ",json);
-        localStorage.clear()
+    data.then(json =>{      
         localStorage.setItem("categories",json)
         json.forEach((el:string) => {
           createCategoryProductCards(el)

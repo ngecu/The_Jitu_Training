@@ -55,10 +55,7 @@ const getProductDetails = async ()=>{
         const add_to_cart_btn = document.querySelector('.add_to_cart') as HTMLButtonElement;
         add_to_cart_btn.addEventListener("click",()=>{
           add_to_cart(json.id)
-        })
-        
-        console.log(json);
-    
+        })    
     })
 
     if (!response.ok) {
